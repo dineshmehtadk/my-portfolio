@@ -12,14 +12,16 @@ export function Footer() {
       <div className="w-full h-[1px] bg-gray"></div>
 
       {/* Main Footer Content */}
-      <div className="grid grid-cols-2 w-[1024px] mx-auto py-8">
+      <div className="max-w-[1024px] mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-2 gap-8">
 
         {/* Left Section */}
-        <div className="flex flex-col gap-3">
-          <div className="flex items-center gap-3">
+        <div className="flex flex-col gap-3 text-center md:text-left">
+          <div className="flex items-center justify-center md:justify-start gap-3">
             <span className="text-white">༕</span>
             <span className="text-white font-bold text-[16px]">DK</span>
-            <span className="text-gray text-sm">dkmehta127@gmail.com</span>
+            <span className="text-gray text-sm break-all">
+              dkmehta127@gmail.com
+            </span>
           </div>
 
           <p className="text-gray text-sm">
@@ -28,8 +30,8 @@ export function Footer() {
         </div>
 
         {/* Right Section */}
-        <div className="flex flex-col items-end gap-3">
-          <h2 className="text-white font-semibold mr-14">Media</h2>
+        <div className="flex flex-col items-center md:items-end gap-3">
+          <h2 className="text-white font-semibold">Media</h2>
 
           <div className="flex items-center gap-4">
             <Image
@@ -60,7 +62,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Copyright */}
-      <div className="w-[1024px] mx-auto pb-6 text-center">
+      <div className="max-w-[1024px] mx-auto px-4 pb-6 text-center">
         <p className="text-gray text-sm">
           © Copyright 2026, Made by Dinesh Mehta.
         </p>

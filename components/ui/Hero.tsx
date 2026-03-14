@@ -4,15 +4,16 @@ import { DotsGrid } from "@/components/ui/DotsGrid";
 
 export function Hero() {
   return (
-    <section className="w-[1024px] mx-auto flex items-center justify-between mt-16">
+    <section className="max-w-[1024px] mx-auto px-4 mt-16 flex flex-col lg:flex-row items-center gap-12">
+      
       {/* Left Content */}
-      <div className="max-w-[520px] space-y-6">
-        <h1 className="text-white text-[32px] font-semibold leading-[42px]">
+      <div className="max-w-[520px] space-y-6 text-center lg:text-left">
+        <h1 className="text-white text-2xl md:text-3xl lg:text-[32px] font-semibold leading-snug lg:leading-[42px]">
           Dinesh is a <span className="text-primary">frontend developer</span>{" "}
           and <span className="text-primary">software engineer</span>
         </h1>
 
-        <p className="text-gray text-[16px] max-w-[420px]">
+        <p className="text-gray text-sm md:text-base max-w-[420px] mx-auto lg:mx-0">
           I build modern, responsive web applications and scalable software
           solutions where performance, usability, and clean code meet.
         </p>
@@ -23,22 +24,20 @@ export function Hero() {
       </div>
 
       {/* Right Content */}
-      <div className="relative">
+      <div className="relative flex flex-col items-center">
         <Image
           src={HeroImage}
           alt="Hero"
-          width={400}
-          height={400}
-          className="relative z-10"
+          className="relative z-10 w-[260px] md:w-[320px] lg:w-[400px] h-auto"
         />
 
         {/* Dot Grid */}
-        <div className="absolute bottom-[80px] right-[10px] z-20">
+        <div className="absolute bottom-[70px] right-[10px] hidden md:block z-20">
           <DotsGrid height={84} width={84} />
         </div>
 
         {/* Status Badge */}
-        <div className="bg-[--background] text-gray-300 text-[14px] px-4 py-2 border border-[--white]">
+        <div className="mt-4 bg-[--background] text-gray text-sm px-4 py-2 border border-[--white]">
           Currently working on{" "}
           <span className="text-white font-medium">Portfolio</span>
         </div>

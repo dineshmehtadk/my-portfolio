@@ -2,12 +2,21 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useState } from "react";
 
 export function Header() {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  const navItems = [
+    { name: "home", path: "/" },
+    { name: "works", path: "/works" },
+    { name: "about-me", path: "/about-me" },
+    { name: "contacts", path: "/contacts" },
+  ];
 
   return (
-    <header className="w-[1024px] h-[61px] mx-auto flex items-center justify-between px-4">
+    <header className="max-w-[1024px] mx-auto px-4 flex items-center justify-between h-[61px]">
       
       {/* Logo */}
       <div className="flex items-center gap-2 text-white font-bold text-[16px]">
@@ -15,38 +24,58 @@ export function Header() {
         <span>DK</span>
       </div>
 
-      {/* Navigation */}
-      <nav>
+      {/* Desktop Navigation */}
+      <nav className="hidden md:block">
         <ul className="flex items-center gap-6 text-base">
-          
-          <li className={`cursor-pointer ${pathname === "/" ? "text-white" : "text-primary hover:text-white"}`}>
-            <Link href="/">
-              <span className="text-primary">#</span>home
-            </Link>
-          </li>
-
-          <li className={`cursor-pointer ${pathname === "/works" ? "text-white" : "text-primary hover:text-white"}`}>
-            <Link href="/works">
-              <span className="text-primary">#</span>works
-            </Link>
-          </li>
-
-          <li className={`cursor-pointer ${pathname === "/about-me" ? "text-white" : "text-primary hover:text-white"}`}>
-            <Link href="/about-me">
-              <span className="text-primary">#</span>about-me
-            </Link>
-          </li>
-
-          <li className={`cursor-pointer ${pathname === "/contacts" ? "text-white" : "text-primary hover:text-white"}`}>
-            <Link href="/contacts">
-              <span className="text-primary">#</span>contacts
-            </Link>
-          </li>
-
+          {navItems.map((item) => (
+            <li
+              key={item.path}
+              className={`cursor-pointer ${
+                pathname === item.path
+                  ? "text-white"
+                  : "text-primary hover:text-white"
+              }`}
+            >
+              <Link href={item.path}>
+                <span className="text-primary">#</span>
+                {item.name}
+              </Link>
+            </li>
+          ))}
           <li className="ml-4 text-white">EN</li>
-
         </ul>
       </nav>
+
+      {/* Mobile Menu Button */}
+      <button
+        className="md:hidden text-white"
+        onClick={() => setOpen(!open)}
+      >
+        ☰
+      </button>
+
+      {/* Mobile Menu */}
+      {open && (
+        <div className="absolute top-[61px] left-0 w-full bg-[--background] border-t border-gray md:hidden">
+          <ul className="flex flex-col items-center gap-6 py-6">
+            {navItems.map((item) => (
+              <li
+                key={item.path}
+                className={`cursor-pointer ${
+                  pathname === item.path
+                    ? "text-white"
+                    : "text-primary hover:text-white"
+                }`}
+              >
+                <Link href={item.path} onClick={() => setOpen(false)}>
+                  <span className="text-primary">#</span>
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </header>
   );
 }

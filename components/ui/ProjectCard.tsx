@@ -9,16 +9,17 @@ export function ProjectCard(props: {
   projectImage: StaticImageData;
 }) {
   return (
-    <div className="w-[330px] border border-gray flex flex-col">
+    <div className="w-full max-w-[330px] border border-gray flex flex-col">
+      
       {/* Project Image */}
       <Image
         src={props.projectImage}
         alt="project-image"
-        className="w-full h-[201px] object-cover"
+        className="w-full h-[180px] md:h-[201px] object-cover"
       />
 
       {/* Tech Stack */}
-      <div className="border-y border-gray px-4 py-2 flex flex-wrap gap-2 text-gray text-sm">
+      <div className="border-y border-gray px-4 py-2 flex flex-wrap gap-2 text-gray text-xs md:text-sm">
         {props.techStack.map((tech, index) => (
           <span key={index}>{tech}</span>
         ))}
@@ -26,19 +27,29 @@ export function ProjectCard(props: {
 
       {/* Content */}
       <div className="p-4 flex flex-col gap-3">
-        <h3 className="text-white text-xl font-semibold">{props.title}</h3>
+        <h3 className="text-white text-lg md:text-xl font-semibold">
+          {props.title}
+        </h3>
 
-        <p className="text-gray text-sm">{props.description} </p>
+        <p className="text-gray text-sm">{props.description}</p>
 
         {/* Buttons */}
-        <div className="flex gap-4 mt-2">
-          <button className="border border-primary px-4 py-1 text-white hover:bg-primary hover:text-black transition">
-            Live ↔
-          </button>
+        <div className="flex flex-wrap gap-3 mt-2">
+          <a
+            href={props.liveLink}
+            target="_blank"
+            className="border border-primary px-4 py-1 text-white hover:bg-primary hover:text-black transition"
+          >
+            Live ↗
+          </a>
 
-          <button className="border border-gray px-4 py-1 text-white hover:border-white transition">
+          <a
+            href={props.cachedLink}
+            target="_blank"
+            className="border border-gray px-4 py-1 text-white hover:border-white transition"
+          >
             Cached &gt;
-          </button>
+          </a>
         </div>
       </div>
     </div>
