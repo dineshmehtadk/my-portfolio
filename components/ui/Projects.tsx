@@ -1,35 +1,40 @@
 import { ProjectCard } from "./ProjectCard";
 
-import project1 from "@/public/project1.png";
-import project2 from "@/public/project2.jpg";
-import project3 from "@/public/project3.png";
+
+import projectPG from "@/public/project_pg.png";
+import projectSWT from "@/public/project_swtclub.png";
+import projectIbuild from "@/public/project_ibuild.png";
+
+
+
+
 
 export function Projects() {
 
   const projectList = [
     {
-      title: "ChertNodes",
-      description: "Minecraft servers hosting",
-      techStack: ["HTML", "SCSS", "Python", "Flask"],
-      liveLink: "#",
+      title: "PG Dekho.com",
+      description: "PG Dekho is an online platform for PGs accommodations , providing , options for working Professionals and students from room to flats across India.",
+      techStack: ["HTML", "CSS", "Next.js", "TypeScript", "Tailwind CSS"],
+      liveLink: "https://pgdekho.com/",
       cachedLink: "#",
-      projectImage: project1
+      projectImage: projectPG
     },
     {
-      title: "Project 2",
-      description: "Description for project 2",
-      techStack: ["Tech1", "Tech2"],
-      liveLink: "#",
+      title: "SWT Club",
+      description: "SWT Club is a Global DMC helping Travel Agents in India connect with travel service providers worldwide through an online interface.",
+      techStack: ["React", "JavaScript", "Redux", "Context API", "Rest API", "Rozarpay"],
+      liveLink: "https://www.swtclub.com/",
       cachedLink: "#",
-      projectImage: project2
+      projectImage: projectSWT
     },
     {
-      title: "Project 3",
-      description: "Description for project 3",
-      techStack: ["TechA", "TechB"],
-      liveLink: "#",
+      title: "IBuild Platform",
+      description: "Ibuild is team of seasoned construction professionals and tech innovators committed to transforming residential building through smart automation and strategic insight. ",
+            techStack: ["React", "Material UI", "JavaScript", "Socket.IO", "Azure", "Tanstack query"],
+      liveLink: "https://ibuildplatform.com/",
       cachedLink: "#",
-      projectImage: project3
+      projectImage: projectIbuild
     }
   ];
 

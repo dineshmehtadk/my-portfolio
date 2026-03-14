@@ -45,7 +45,7 @@ export function Contact() {
 
           <div className="flex items-center gap-2">
             <Image src={mailIcon} alt="mail Icon" width={24} height={24} />
-            <span className="text-gray">dinesh@m.me</span>
+            <span className="text-gray">dkmehta127@gmail.com</span>
           </div>
 
         </div>

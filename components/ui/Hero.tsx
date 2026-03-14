@@ -5,7 +5,6 @@ import { DotsGrid } from "@/components/ui/DotsGrid";
 export function Hero() {
   return (
     <section className="max-w-[1024px] mx-auto px-4 mt-16 flex flex-col lg:flex-row items-center gap-12">
-      
       {/* Left Content */}
       <div className="max-w-[520px] space-y-6 text-center lg:text-left">
         <h1 className="text-white text-2xl md:text-3xl lg:text-[32px] font-semibold leading-snug lg:leading-[42px]">
@@ -18,9 +17,11 @@ export function Hero() {
           solutions where performance, usability, and clean code meet.
         </p>
 
-        <button className="border border-primary px-5 py-2 text-white hover:bg-primary hover:text-black transition">
-          Contact me !!
-        </button>
+        <a href="mailto:dkmehta127@gmail.com">
+          <button className="border border-primary px-5 py-2 text-white hover:bg-primary hover:text-black transition">
+            Contact me !!
+          </button>
+        </a>
       </div>
 
       {/* Right Content */}

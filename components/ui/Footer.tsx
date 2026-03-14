@@ -7,13 +7,11 @@ import gitIcon from "../../public/git-icon.png";
 export function Footer() {
   return (
     <footer className="mt-16">
-
       {/* Top Border */}
       <div className="w-full h-[1px] bg-gray"></div>
 
       {/* Main Footer Content */}
       <div className="max-w-[1024px] mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-
         {/* Left Section */}
         <div className="flex flex-col gap-3 text-center md:text-left">
           <div className="flex items-center justify-center md:justify-start gap-3">
@@ -34,29 +32,35 @@ export function Footer() {
           <h2 className="text-white font-semibold">Media</h2>
 
           <div className="flex items-center gap-4">
-            <Image
-              src={mailIcon}
-              alt="mail Icon"
-              width={24}
-              height={24}
-              className="cursor-pointer hover:opacity-80"
-            />
+            <a href="mailto:dkmehta127@gmail.com">
+              <Image
+                src={mailIcon}
+                alt="mail Icon"
+                width={24}
+                height={24}
+                className="cursor-pointer hover:opacity-80"
+              />
+            </a>
 
-            <Image
-              src={discordIcon}
-              alt="Discord Icon"
-              width={24}
-              height={24}
-              className="cursor-pointer hover:opacity-80"
-            />
+            <a href="https://discord.com" target="_blank">
+              <Image
+                src={discordIcon}
+                alt="Discord Icon"
+                width={24}
+                height={24}
+                className="cursor-pointer hover:opacity-80"
+              />
+            </a>
 
-            <Image
-              src={gitIcon}
-              alt="Git Icon"
-              width={24}
-              height={24}
-              className="cursor-pointer hover:opacity-80"
-            />
+            <a href="https://github.com/dineshmehtadk" target="_blank">
+              <Image
+                src={gitIcon}
+                alt="Git Icon"
+                width={24}
+                height={24}
+                className="cursor-pointer hover:opacity-80"
+              />
+            </a>
           </div>
         </div>
       </div>
@@ -67,7 +71,6 @@ export function Footer() {
           © Copyright 2026, Made by Dinesh Mehta.
         </p>
       </div>
-
     </footer>
   );
 }
