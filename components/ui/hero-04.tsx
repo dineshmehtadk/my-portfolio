@@ -35,7 +35,6 @@ export function HeroSection04() {
 
         <Contact />
       </section>
-     <Footer />
     </>
   );
 }
