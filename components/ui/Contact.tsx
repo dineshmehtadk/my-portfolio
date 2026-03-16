@@ -5,24 +5,9 @@ import mailIcon from "../../public/mail-icon.png";
 
 export function Contact() {
   return (
-    <section className="mt-16 mb-24 px-4">
 
-      {/* Header */}
-      <div className="flex items-center justify-between max-w-[1024px] mx-auto">
-        <div className="flex items-center gap-4 flex-1">
-          <h1 className="text-white text-xl md:text-2xl font-semibold whitespace-nowrap">
-            <span className="text-primary">#</span>contact
-          </h1>
+   
 
-          <div className="flex-1 h-[1px] bg-primary"></div>
-        </div>
-
-        <button className="text-white ml-6 hover:text-primary transition whitespace-nowrap">
-          View all →
-        </button>
-      </div>
-
-      {/* Content */}
       <div className="mt-14 max-w-[1024px] mx-auto flex flex-col lg:flex-row items-start gap-10">
 
         {/* Text */}
@@ -52,6 +37,5 @@ export function Contact() {
 
       </div>
 
-    </section>
   );
 }

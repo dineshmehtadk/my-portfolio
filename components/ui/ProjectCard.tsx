@@ -6,17 +6,18 @@ export function ProjectCard(props: {
   techStack: string[];
   liveLink: string;
   cachedLink: string;
-  projectImage: StaticImageData;
+  projectImage?: StaticImageData;
 }) {
   return (
     <div className="w-full max-w-[330px] border border-gray flex flex-col">
       
       {/* Project Image */}
-      <Image
+     {props.projectImage&& <Image
         src={props.projectImage}
         alt="project-image"
         className="w-full h-[180px] md:h-[201px] object-cover"
       />
+     }
 
       {/* Tech Stack */}
       <div className="border-y border-gray px-4 py-2 flex flex-wrap gap-2 text-gray text-xs md:text-sm">

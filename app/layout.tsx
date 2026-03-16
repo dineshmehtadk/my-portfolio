@@ -2,6 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Fira_Code } from "next/font/google";
 import "./globals.css";
 
+import { Header } from "@/components/ui/Header";
+import { Footer } from "@/components/ui/Footer";
+
 const firaCode = Fira_Code({
   subsets: ["latin"],
   variable: "--font-fira-code",
@@ -26,7 +29,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${firaCode.variable} antialiased dark`}>
         <main className="min-h-screen w-full">
+          <Header />
           {children}
+          <Footer />
         </main>
       </body>
     </html>
